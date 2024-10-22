@@ -1,0 +1,29 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+.flame-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: blue;
+    font-size: 90px;
+    font-weight: bold;
+    text-shadow: 0 0 10px blue, 0 0 20px blue;
+    animation: flame 2s infinite alternate;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes flame {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.7;
+    }
+}
