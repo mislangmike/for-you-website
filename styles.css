@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white; /* Change text color for better visibility */
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 200px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+#calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    border: 1px solid #2a06f3;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#event-list {
+    margin-top: 20px;
+}
+
+.event-item {
+    margin: 5px 0;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.event-display {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #570586; /* Border for the event display box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgba(2, 167, 24, 0.8); /* Light background for readability */
+}
+
+.event-display h3 {
+    margin: 0;
+    text-align: center;
+}
+
+#month-name {
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.selected {
+    background-color: #f0f0f0;
+    border: 2px solid #4CAF50;
+}
+
+.current-date {
+    background-color: #ffeb3b; /* Yellow background for current date */
+    font-weight: bold;
+    border-radius: 50%; /* Optional: round the corners */
+}
+
+.background-video {
+    position: fixed; /* Position the video fixed to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -1; /* Send the video behind other content */
+}
+
+header, main, footer {
+    position: relative; /* Position relative to stack content above the video */
+    z-index: 1; /* Ensure content is above the video */
+}
+
+h1, h2, h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+}
+
+/* 3D Magic Effect on Hover */
+.day:hover {
+    transform: translateY(-10px) rotateY(10deg) rotateX(10deg); /* Lift and rotate */
+    box-shadow: 0 10px 20px rgba(255, 165, 0, 0.5), 0 5px 15px rgba(255, 165, 0, 0.3); /* Glow effect */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: black; /* Text color inside modal */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sparkle {
+    animation: sparkle 0.5s infinite alternate;
+}
+
+@keyframes sparkle {
+    0% {
+        text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px yellow;
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px yellow;
+        transform: scale(1.1);
+    }
+}
+.day-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.day-labels div {
+    padding: 10px;
+}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcad05;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0; /* Remove default margin */
+}
+
+.calendar {
+    text-align: center;
+    background: rgb(238, 215, 5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(245, 245, 245, 0.884);
+    width: 90%; /* Use percentage for responsiveness */
+    max-width: 400px; /* Set a max width */
+}
+
+.date {
+    margin: 15px 0;
+    border: 1px solid #b505cc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #570ad4;
+}
+
+.date-title {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid #bcc90a;
+}
+
+.events {
+    padding: 10px;
+    display: none;
+}
+
+.event {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #00eeff;
+    cursor: pointer;
+}
+
+.event:hover {
+    background-color: #0ac028;
+}
+
+/* Media Queries for Better Responsiveness */
+@media (max-width: 600px) {
+    .calendar {
+        width: 95%; /* Adjust width for smaller screens */
+    }
+}
+.calendar {
+    transform: scale(1); /* Default scale */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Example to zoom in on hover */
+.calendar:hover {
+    transform: scale(1.05); /* Zoom in */
+}

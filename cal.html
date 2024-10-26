@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <video autoplay loop muted class="background-video">
+        <source src="anew.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>My Calendar</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to My Calendar</h2>
+            <p>This is a 4D calendar where you can manage your events and stay organized.</p>
+        </section>
+
+        <section id="calendar">
+            <h2>Monthly Calendar</h2>
+            <h3 id="month-name"></h3>
+            <input type="date" id="date-picker" onchange="selectDateFromPicker()">
+            
+            <!-- Day Labels -->
+            <div id="day-labels" class="day-labels">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <div id="calendar-container"></div>
+            
+            <!-- Week Navigation Buttons -->
+            <button onclick="prevWeek()">Previous Week</button>
+            <button onclick="nextWeek()">Next Week</button>
+            
+            <!-- Month Navigation Buttons -->
+            <button onclick="prevMonth()">Previous Month</button>
+            <button onclick="nextMonth()">Next Month</button>
+
+            <h3>Add Event</h3>
+            <form id="event-form">
+                <input type="text" id="event-title" placeholder="Event Title" required>
+                <button type="submit">Add Event</button>
+            </form>
+
+            <!-- New section for displaying events for the selected date -->
+            <div id="event-display" class="event-display">
+                <h3>Events for <span id="selected-date"></span></h3>
+                <div id="event-list"></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About This Website</h2>
+            <p>This website is a 4D calendar that helps you manage your events and stay organized.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Calendar</p>
+    </footer>
+
+    <!-- Modal for displaying events -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Events for <span id="modal-date"></span></h2>
+            <div id="modal-events"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippine Holidays and Events Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar">
+        <h1>Philippine Holidays and Events Calendar</h1>
+
+        <div class="date" id="january">
+            <div class="date-title" onclick="toggleEvents('jan-events')">January 1</div>
+            <div class="events" id="jan-events">
+                <div class="event">New Year's Day</div>
+                <div class="event">Sinulog Festival (Cebu)</div>
+                <div class="event">Ati-Atihan Festival (Kalibo, Aklan)</div>
+            </div>
+        </div>
+
+        <div class="date" id="february">
+            <div class="date-title" onclick="toggleEvents('feb-events')">February 25</div>
+            <div class="events" id="feb-events">
+                <div class="event">EDSA Revolution Anniversary</div>
+                <div class="event">Panagbenga Festival (Baguio)</div>
+            </div>
+        </div>
+
+        <div class="date" id="april">
+            <div class="date-title" onclick="toggleEvents('apr-events')">April 9</div>
+            <div class="events" id="apr-events">
+                <div class="event">Araw ng Kagitingan (Day of Valor)</div>
+            </div>
+        </div>
+
+        <div class="date" id="may">
+            <div class="date-title" onclick="toggleEvents('may-events')">May 1</div>
+            <div class="events" id="may-events">
+                <div class="event">Labor Day</div>
+                <div class="event">Pahiyas Festival (Lucban, Quezon)</div>
+                <div class="event">Obando Fertility Rites (Bulacan)</div>
+            </div>
+        </div>
+
+        <div class="date" id="august">
+            <div class="date-title" onclick="toggleEvents('aug-events')">August 21</div>
+            <div class="events" id="aug-events">
+                <div class="event">Ninoy Aquino Day</div>
+                <div class="event">National Heroes Day (Last Monday of August)</div>
+                <div class="event">Kadayawan Festival (Davao)</div>
+            </div>
+        </div>
+
+        <div class="date" id="december">
+            <div class="date-title" onclick="toggleEvents('dec-events')">December 25</div>
+            <div class="events" id="dec-events">
+                <div class="event">Christmas Day</div>
+                <div class="event">Rizal Day (December 30)</div>
+                <div class="event">New Year's Eve (December 31)</div>
+                <div class="event">Feast of the Immaculate Conception (December 8)</div>
+                <div class="event">Christmas Eve (December 24)</div>
+            </div>
+        </div>
+
+        <!-- Additional dates can be added similarly -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
